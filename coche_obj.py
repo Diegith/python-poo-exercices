@@ -10,7 +10,8 @@ class Coche:
 
     # Declaración de métodos
     def arrancar(self):  # self hace referencia a la instancia de clase.
-        self.is_enMarcha = True  # Es como si pusiésemos miCoche.is_enMarcha = True
+        self.__is_enMarcha = True  # Es como si pusiésemos miCoche.is_enMarcha = True
+        return self.__is_enMarcha
 
     def estado(self):
         if self.is_enMarcha == True:
@@ -30,3 +31,8 @@ print(coche_1.estado())
 
 # Acceso a un método de la clase Coche. Nomenclatura del punto.
 print("El coche está arrancado:", coche_1.arrancar())
+
+# encapsulamiento
+coche_2 = Coche()
+coche_2.__ruedas = 8
+print(f" mi coche tiene: {coche_2.__ruedas} ruedas")
